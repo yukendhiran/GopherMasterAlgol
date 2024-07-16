@@ -1,0 +1,90 @@
+---
+title: BIT MAGIC
+---
+
+import CodeBlock from "@theme/CodeBlock";
+
+import GetBit from "!!raw-loader!./getBit.go";
+import GetBitOut from "!!raw-loader!./getBitOut.txt";
+
+import ClearBit from "!!raw-loader!./clearBit.go";
+import ClearBitOut from "!!raw-loader!./clearBitOut.txt";
+
+import SetBit from "!!raw-loader!./setBit.go";
+import SetBitOut from "!!raw-loader!./setBitOut.txt";
+
+import ClearNLastBit from "!!raw-loader!./clearNLastBit.go";
+import ClearNLastBitOut from "!!raw-loader!./clearNLastBitOut.txt";
+
+import ClearRangeBit from "!!raw-loader!./clearRangeBit.go";
+import ClearRangeBitOut from "!!raw-loader!./clearRangeBitOut.txt";
+
+## getBits:
+
+We have two options: we can use a left shift to move the number's bit to the specific position, or a right shift with `1` to have `1` at the specific position. Then we can perform an AND operation to check whether the bit at that position is `1` or `0`.
+
+<CodeBlock language="go">{GetBit}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{GetBitOut}</CodeBlock>
+
+## clearBit:
+
+To clear a bit at a specific position in a number, With left shift, we shift `1` to the specified position and then negate the mask. This mask has `0` at the target position and `1`s elsewhere. We then use the AND operator with this mask to clear the bit.
+
+<CodeBlock language="go">{ClearBit}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{ClearBitOut}</CodeBlock>
+
+## setBit:
+
+To clear a bit at a specific position in a number, With left shift, we shift `1` to the specified position. We then use the OR operator with this mask to set the bit.
+
+<CodeBlock language="go">{SetBit}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{SetBitOut}</CodeBlock>
+
+## clearNLastBit:
+
+To clear the last n bits of a number, we create a mask by left-shifting 1 by n positions, subtracting 1 from it, and then negating it. This mask has 0`s in the last `n bits and 1`s elsewhere. We then use the AND operator with this mask to clear the last `n bits
+
+<CodeBlock language="go">{ClearNLastBit}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{ClearNLastBitOut}</CodeBlock>
+
+## clearRangeBit:
+
+The `clearRangeBit` function in Go is used to clear (set to 0) a range of bits in a given number. The function takes three arguments: the number (`num`), the starting position (`start`), and the ending position (`end`).
+
+The function works as follows:
+
+1. **Generate Mask1**:
+
+   - `mask1` is created by left-shifting `1` by `start` positions and then subtracting `1`, resulting in a mask with the last `start` bits set to `1`.
+   - Applying the bitwise NOT operator to `mask1` sets all bits from `0` to `start-1` to `0`.
+
+2. **Generate Mask2**:
+
+   - `mask2` is created by left-shifting `1` by `end` positions and then subtracting `1`, resulting in a mask with the last `end` bits set to `1`.
+
+3. **Combine Masks**:
+
+   - The combined mask is created by applying a bitwise AND operation between `mask1` and `mask2`, followed by a bitwise NOT operation. This sets the bits in the range from `start` to `end` to `0`.
+
+4. **Apply Mask**:
+   - The resulting mask is applied to the original number using a bitwise AND operation, clearing the specified bit range.
+
+<CodeBlock language="go">{ClearRangeBit}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{ClearRangeBitOut}</CodeBlock>
+
+Of course, the starting position and end position can also be considered differently based on the operator we use.

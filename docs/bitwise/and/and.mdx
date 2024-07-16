@@ -1,0 +1,17 @@
+---
+title: AND (&)
+---
+
+import CodeBlock from "@theme/CodeBlock";
+
+import And from "!!raw-loader!./and.go";
+import AndOut from "!!raw-loader!./andOut.txt";
+
+The AND operator compares each bit of the first operand to the corresponding bit
+of the second operand. If both bits are 1, the corresponding result bit is set to 1. Otherwise, it is set to 0.
+
+<CodeBlock language="go">{And}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{AndOut}</CodeBlock>

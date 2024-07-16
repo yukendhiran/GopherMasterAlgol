@@ -1,0 +1,39 @@
+---
+title: NOT (`^`)
+---
+
+import CodeBlock from "@theme/CodeBlock";
+
+import Not from "!!raw-loader!./not.go";
+import NotOut from "!!raw-loader!./notOut.txt";
+
+While Go does not have a unary bitwise NOT (~) operator, it achieves the same functionality using the caret (^) as a bitwise complement operator. This operator flips each bit of its operand, providing bitwise negation functionality in Go.
+
+<CodeBlock language="go">{Not}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{NotOut}</CodeBlock>{" "}
+
+In Go, the bitwise complement operator `^` flips each bit of its integer operand. This operation is based on the two's complement representation of integers.
+
+### For `int` type (`a`)
+
+- `var a int = 0` initializes `a` to `0`.
+- In binary (assuming 32-bit integer): `00000000 00000000 00000000 00000000`
+- Applying `^a` (bitwise complement) flips each bit:
+  ** Resulting binary: `11111111 11111111 11111111 11111111`
+  ** The leftmost bit (most significant bit) is the sign bit.
+  ** `0` indicates a non-negative number, and `1` indicates a negative number.
+  ** Flipping all bits of `00000000 00000000 00000000 00000000` results in `11111111 11111111 11111111 11111111`, which represents `-1`.
+- Therefore, `fmt.Println(^a)` outputs `-1`.
+
+### For `uint8` type (`b`)
+
+- `var b uint8 = 0` initializes `b` to `0`.
+- `uint8` is an unsigned 8-bit integer ranging from `0` to `255`.
+- In binary (8-bit): `00000000`
+- Applying `^b` (bitwise complement) flips each bit:
+  ** Resulting binary: `11111111`
+  ** In unsigned interpretation, `11111111` represents `255` in decimal.
+- Therefore, `fmt.Println(^b)` outputs `255`.

@@ -1,0 +1,20 @@
+---
+title: Odd or Even Check Using Bitwise AND
+---
+
+import CodeBlock from "@theme/CodeBlock";
+
+import OddEven from "!!raw-loader!./oddeven.go";
+import OddEvenOut from "!!raw-loader!./oddevenOut.txt";
+
+To determine if a number is odd or even, you can use the bitwise AND operator (`&`). By performing a bitwise AND between the number and `1`, you can check the least significant bit (the last bit) of the number:
+- If the result is `0`, the number is even.
+- If the result is `1`, the number is odd.
+
+This is because the binary representation of even numbers always ends in `0`, and the binary representation of odd numbers always ends in `1`.
+
+<CodeBlock language="go">{OddEven}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{OddEvenOut}</CodeBlock>

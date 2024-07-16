@@ -1,0 +1,3 @@
+Check if numbers are odd or even using bitwise AND:
+5 & 1 = 1 -> 5 is odd
+8 & 1 = 0 -> 8 is even

@@ -1,0 +1,6 @@
+Original number: 00001010
+Mask : (1<<n): 00001000
+Mask : (1<<n) -1: 00000111
+Mask : (^(1<<n) -1): 11111000
+Search Binaray Arithmetic, If you don't understand. 
+Cleared Last 3 Bits: 00001000

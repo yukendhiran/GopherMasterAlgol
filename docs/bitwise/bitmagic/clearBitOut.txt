@@ -1,0 +1,2 @@
+Original number: 00001010
+Cleared with right shift: 00000010
