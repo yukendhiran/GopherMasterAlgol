@@ -10,7 +10,6 @@ func clearRangeBit(num uint8, start uint8, end uint8) uint8 {
 	fmt.Printf("Mask2: %08b\n", mask2)
 	fmt.Printf("Mask: %08b\n", mask)
 	return num & mask
-
 }
 
 func main(){

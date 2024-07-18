@@ -19,6 +19,9 @@ import ClearNLastBitOut from "!!raw-loader!./clearNLastBitOut.txt";
 import ClearRangeBit from "!!raw-loader!./clearRangeBit.go";
 import ClearRangeBitOut from "!!raw-loader!./clearRangeBitOut.txt";
 
+import ReplaceBit from "!!raw-loader!./replaceBit.go";
+import ReplaceBitOut from "!!raw-loader!./replaceBitOut.txt";
+
 ## getBits:
 
 We have two options: we can use a left shift to move the number's bit to the specific position, or a right shift with `1` to have `1` at the specific position. Then we can perform an AND operation to check whether the bit at that position is `1` or `0`.
@@ -88,3 +91,13 @@ Output:
 <CodeBlock language="text">{ClearRangeBitOut}</CodeBlock>
 
 Of course, the starting position and end position can also be considered differently based on the operator we use.
+
+## replaceBit:
+
+Let's say you want to replace bits in number X with another bit Y at a specific index. To achieve that, we can use our previously created 'clear bit' function, left shift the value to the starting index, and perform an OR operation.
+
+<CodeBlock language="go">{ReplaceBit}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{ReplaceBitOut}</CodeBlock>

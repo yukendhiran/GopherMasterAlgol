@@ -1,0 +1,5 @@
+Original number: 00001111
+Replace number: 00000101
+Mask: 00000111
+Value: 00101000
+Replaced number: 00101111
