@@ -1,5 +1,0 @@
-Original number: 00001010
-Mask1: 11111000
-Mask2: 01111111
-Mask: 10000111
-Cleared Range: 00000010

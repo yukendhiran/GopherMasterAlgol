@@ -1,4 +1,0 @@
-Number :    1000 and Number -1:      111
-Power of 2
-Number :     101 and Number -1:      100
-Not Power of 2

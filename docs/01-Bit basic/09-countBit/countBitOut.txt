@@ -1,8 +1,0 @@
-Original number: 00001010
-num >> 1: 00000101
-num & 1: 00000001
-num >> 1: 00000010
-num >> 1: 00000001
-num & 1: 00000001
-num >> 1: 00000000
-Number of 1's in bits: 2
