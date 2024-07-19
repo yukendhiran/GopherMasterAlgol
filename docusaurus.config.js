@@ -47,7 +47,6 @@ const config = {
           editUrl: "https://github.com/yukendhiran/GopherMasterAlgol",
         },
         blog: {
-
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -72,40 +71,37 @@ const config = {
           src: "img/goalgol.png",
         },
         items: [
-          {
+          /*{
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
             label: "Tutorial",
-          },
-          { to: "/blog", label: "Blog", position: "left" },
+          },*/
+          /*{ to: "/blog", label: "Blog", position: "left" },*/
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/yukendhiran/GopherMasterAlgol",
             label: "GitHub",
             position: "right",
           },
         ],
       },
-      footer: {
+      /* footer: {
         links: [
           {
-            label: "Stack Overflow",
-            href: "https://stackoverflow.com/questions/tagged/docusaurus",
-          },
-          {
-            label: "Discord",
-            href: "https://discordapp.com/invite/docusaurus",
-          },
-          {
-            label: "Twitter",
-            href: "https://twitter.com/docusaurus",
+            //label: "Stack Overflow",
+            // href: "https://stackoverflow.com/questions/tagged/docusaurus",
           },
         ],
-      },
+      },*/
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
-        additionalLanguages: ['go'],
+        additionalLanguages: ["go"],
+      },
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
       },
     }),
 };
