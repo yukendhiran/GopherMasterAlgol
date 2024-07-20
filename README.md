@@ -2,40 +2,14 @@
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-### Installation
+# GoMasterAlgol
 
-```
-$ yarn
-```
+## Introduction
 
-### Local Development
+Hi, I'm Yukendhiran. I'm diving into algorithms and Go programming, and I've decided to turn this journey into a docs | course.
 
-```
-$ yarn start
-```
+If you're wondering why Go instead of languages like Java or C++, well, I'm part of a community that questions OOP and humorously dislikes C++. Go was designed to solve fundamental software development challenges, making it an ideal choice for learning algorithms.
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+## Connect with me
 
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/yukendhiran-elango/)

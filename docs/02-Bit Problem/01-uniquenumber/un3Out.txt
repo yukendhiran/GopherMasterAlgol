@@ -1,0 +1,13 @@
+Original Array: [1 2 3 4 3 3 2 2 1 1]
+Inside updateSum [1 0 0 0 0 0 0 0]
+Inside updateSum [1 1 0 0 0 0 0 0]
+Inside updateSum [2 2 0 0 0 0 0 0]
+Inside updateSum [2 2 1 0 0 0 0 0]
+Inside updateSum [3 3 1 0 0 0 0 0]
+Inside updateSum [4 4 1 0 0 0 0 0]
+Inside updateSum [4 5 1 0 0 0 0 0]
+Inside updateSum [4 6 1 0 0 0 0 0]
+Inside updateSum [5 6 1 0 0 0 0 0]
+Inside updateSum [6 6 1 0 0 0 0 0]
+Inside unique [0 0 1 0 0 0 0 0]
+The Unique Number is: 4

@@ -3,7 +3,7 @@ slug: /
 sidebar_position: 1
 ---
 
-# GoMasterAlgol
+# GopherMasterAlgol
 
 ## Introduction
 

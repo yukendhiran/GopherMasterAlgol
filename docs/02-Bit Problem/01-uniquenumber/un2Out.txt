@@ -1,0 +1,2 @@
+Original Array: [1 2 3 4 5 3 2 1]
+The Unique Numbers are: 5 4

@@ -1,0 +1,71 @@
+---
+title: Check Unique Number
+---
+
+import CodeBlock from "@theme/CodeBlock";
+
+import UniqueNumber from "!!raw-loader!./uniquenum.go";
+import UniqueNumberOut from "!!raw-loader!./uniquenumOut.txt";
+
+import UniqueNumber2 from "!!raw-loader!./un2.go";
+import UniqueNumber2Out from "!!raw-loader!./un2Out.txt";
+
+import UniqueNumber3 from "!!raw-loader!./un2.go";
+import UniqueNumber3Out from "!!raw-loader!./un3Out.txt";
+
+# Unique I
+
+In a set of 2n+1 numbers, where every number appears twice except for one, we can easily find the unique number. This is because the XOR operation between the same numbers results in 0, so the numbers that appear twice will cancel each other out, leaving only the unique number. To find the unique number, we can XOR all the elements in the array.
+
+<CodeBlock language="go">{UniqueNumber}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{UniqueNumberOut}</CodeBlock>
+
+# Unique II
+
+In this problem, we have an array where every number appears twice except for two unique numbers. We need to find these two unique numbers using bitwise operations.
+
+Steps:
+
+- XOR all the elements in the array. The result will be the XOR of the two unique numbers since the XOR of a number with itself is 0 and XOR is commutative and associative.
+
+- Find the rightmost set bit: The XOR result of the two unique numbers will have at least one bit set (1). We can find the position of the rightmost set bit to differentiate between the two unique numbers.
+
+- Divide numbers into two groups: Using the set bit found in the previous step, we can divide the numbers into two groups. One group will have 1 at the found position of set bit , and the other group will not have 1 at set bit position.
+
+- XOR within groups: XOR all numbers within each group separately. Each group will result in one of the unique numbers because all other numbers will cancel out.
+
+<CodeBlock language="go">{UniqueNumber2}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{UniqueNumber2Out}</CodeBlock>
+
+# unique III
+
+The given array follows a 3n+1 pattern, where every number appears exactly three times except for one unique number. We can find this unique number using bit manipulation. Let's break down the steps to understand how we can nullify the repeating numbers.
+
+Since we are using uint8, the numbers will be 8 bits long, so we can create an array of 8 elements to hold the sum of each bit position.
+
+    Initialize a sum array:
+       - We create an array of 8 elements to store the sum of bits at each position across all numbers.
+
+    Sum each bit position:
+       - For each number in the input array, we add its bits to the corresponding positions in the sum array.
+        If a number 1 (binary 00000001) occurs 3 times, the sum array will look like [3,0,0,0,0,0,0,0].
+        If a number 2 (binary 00000010) occurs 3 times, the sum array will look like [0,3,0,0,0,0,0,0].
+
+    Nullify repeating numbers:
+       - Since the repeating numbers contribute sums that are multiples of the repetition count (3 in this case), we can use the modulus operation to nullify these sums.
+        After applying modulus 3 to each element in the sum array, the positions that correspond to the repeating numbers will be set to 0, while the positions corresponding to the unique number will remain non-zero.
+
+    Construct the unique number:
+      -  By converting the remaining non-zero bits back to a single number, we can identify the unique number.
+
+<CodeBlock language="go">{UniqueNumber3}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{UniqueNumber3Out}</CodeBlock>
