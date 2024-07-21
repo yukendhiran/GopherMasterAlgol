@@ -1,0 +1,10 @@
+Enter the size of Characters: 4 3
+Enter the Characters: xyz
+The Original Characters are: [x y z]
+x 
+y 
+x y 
+z 
+x z 
+y z 
+x y z 

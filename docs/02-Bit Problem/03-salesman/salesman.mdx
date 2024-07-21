@@ -1,0 +1,40 @@
+---
+title: Traveling Salesman Problem (TSP) Using Bit Masking
+---
+
+import CodeBlock from "@theme/CodeBlock";
+
+import Salesman from "!!raw-loader!./salesman.go";
+import SalesmanOut from "!!raw-loader!./salesmanOut.txt";
+
+The Traveling Salesman Problem (TSP) is a well-known algorithmic challenge in computer science. Given a set of cities and the distances between them, the goal is to find the shortest route that visits each city exactly once and returns to the starting point. This solution uses dynamic programming with bit masking to efficiently solve the problem.
+
+## Explanation
+
+The `tsp` function solves the Traveling Salesman Problem using a recursive approach with bit masking. Here is a step-by-step explanation:
+
+### Function Parameters
+
+- `distance [][]int`: A 2D array representing the distances between cities.
+- `setOfCities int`: A bitmask representing the set of cities that have been visited.
+- `city int`: The current city.
+- `n int`: The total number of cities.
+
+### Base Case
+
+- `if setOfCities == (1<<n)-1`: Checks if all cities have been visited. The bitmask `(1<<n)-1` has all bits set to 1, indicating that all cities are included in the set of visited cities.
+- `return distance[city][0]`: If all cities have been visited, return the distance from the current city back to the starting city (0).
+
+### Recursive Case
+
+- `var ans int = math.MaxInt32`: Initialize the minimum cost (`ans`) to a large value.
+- `for i := 0; i < n; i++`: Loop through all cities.
+  - `if (setOfCities & (1 << i)) == 0`: Check if the city `i` has not been visited.
+    - `var newAns = distance[city][i] + tsp(distance, setOfCities|(1<<i), i, n)`: Calculate the cost of visiting city `i` and recursively solve the problem for the remaining cities.
+    - `if ans > newAns { ans = newAns }`: Update the minimum cost if a cheaper route is found.
+
+<CodeBlock language="go">{Salesman}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{SalesmanOut}</CodeBlock>

@@ -1,0 +1,19 @@
+---
+title: Subset for Given String
+---
+
+import CodeBlock from "@theme/CodeBlock";
+
+import Subset from "!!raw-loader!./subset.go";
+import SubsetOut from "!!raw-loader!./subsetOut.txt";
+
+To find all subsets of a set, we can use bitmasking technique. This involves representing each subset as a binary number, where each bit indicates whether a particular element is included in the subset.
+
+- The total number of subsets of a set with N elements is 2^N. This is because each element can either be included or excluded from a subset, resulting in 2N2N combinations.
+- By iterating over binary numbers from 0 to 2N−12N−1, you can generate all possible subsets. Each bit in the binary number indicates whether the corresponding element is included in the subset.
+
+<CodeBlock language="go">{Subset}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{SubsetOut}</CodeBlock>
