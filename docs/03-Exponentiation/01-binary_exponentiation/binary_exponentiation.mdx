@@ -1,0 +1,33 @@
+---
+title: Binary Exponentiation
+---
+
+import CodeBlock from "@theme/CodeBlock";
+
+import Be from "!!raw-loader!./be.go";
+import BeOut from "!!raw-loader!./beOut.txt";
+
+The `binaryExponentiation` function calculates the power of a number using an efficient method known as binary exponentiation. This method reduces the number of multiplications needed by utilizing the binary representation of the exponent.
+
+## Explanation
+
+The `binaryExponentiation` function computes \( a^b \) using the following approach:
+
+1. **Initialization**:
+   - `result := 1`: Initialize the result to 1.
+2. **Loop until `b` is greater than 0**:
+
+   - `if b & 1 == 1`: Check if the least significant bit of `b` is 1 (i.e., `b` is odd).
+     - If true, multiply `result` by `a`.
+   - `a = a * a`: Square the base `a`.
+   - `b = b >> 1`: Right-shift the exponent `b` by 1 (equivalent to dividing `b` by 2).
+
+3. **Return the final result**.
+
+   - This method effectively reduces the time complexity to \( O(\log b) \) compared to the naive approach which has a time complexity of \( O(b) \).
+
+<CodeBlock language="go">{Be}</CodeBlock>
+
+Output:
+
+<CodeBlock language="text">{BeOut}</CodeBlock>
